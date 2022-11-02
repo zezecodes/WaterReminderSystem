@@ -1,4 +1,6 @@
 import random
+import schedule
+import time
 
 
 print("Welcome to the water reminder system!\n-------------------------------------")
@@ -36,6 +38,10 @@ def reminderSystem():
     userReminderInput = input("What number of bottles have to be in the fridge when you want to be prompted for a refill? - ")
     userReminderinputSplit = userReminderInput.split()
     userReminderInputInt = int(''.join(map(str, userReminderinputSplit)))
+    if questionInt != userReminderInputInt:
+        redc = questionInt-1
+        
+        print(redc)
 
 
     print(f"{timeRefillInt}, {timeTakeoutInt}, {questionInt}") 
@@ -47,6 +53,16 @@ def reminderSystem():
     # else:
     #     print("You won't be needing a refill.\nWe will prompt you when the need arises.\nThank you.")
     
+# def reduction():
+#     redc -= questionInt
+#     return redc
+# def countdownTimer():
+#     schedule.every(30).minutes.do(reduction)
+#     while True:
+#         schedule.run_pending()
+#         time.sleep(5)
+
+
 reminderSystem()
 
 
