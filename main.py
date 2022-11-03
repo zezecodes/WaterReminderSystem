@@ -2,7 +2,6 @@ import random
 import schedule
 import time
 
-
 print("Welcome to the water reminder system!\n-------------------------------------")
 
 # List of healthy water facts that change everytime user launches program
@@ -17,24 +16,36 @@ print(f"{emojis} Did you know {randomQuotesGenerator}?\n")
 
 
 # Gets the number of bottles put in users fridge daily
-question1 = input("How many bottles do you normally put in the refrigerator daily? - ")
-questionSplit = question1.split()
-questionInt = int(''.join(map(str, questionSplit)))
+try:
+    question1 = input("How many bottles do you normally put in the refrigerator daily? - ")
+    questionSplit = question1.split()
+    questionInt = int(''.join(map(str, questionSplit)))
+except ValueError:
+    print("Please input a valid number and try again")
 
 # Gets the number of times users fridge is refilled daily
-timeRefill = input("How many times do you refill your fridge daily? - ")
-timeRefillSplit = timeRefill.split()
-timeRefillInt = int(''.join(map(str, timeRefillSplit)))
+try:
+    timeRefill = input("How many times do you refill your fridge daily? - ")
+    timeRefillSplit = timeRefill.split()
+    timeRefillInt = int(''.join(map(str, timeRefillSplit)))
+except ValueError:
+    print("Please input a valid number and try again")
 
 # Gets the amount of bottles removed from the fridge daily
-timeTakeout = input("How many times do you take water out of the fridge daily? - ")
-timeTakeoutSplit = timeTakeout.split()
-timeTakeoutInt = int(''.join(map(str, timeTakeoutSplit)))
+try:
+    timeTakeout = input("How many times do you take water out of the fridge daily? - ")
+    timeTakeoutSplit = timeTakeout.split()
+    timeTakeoutInt = int(''.join(map(str, timeTakeoutSplit)))
+except ValueError:
+    print("Please input a valid number and try again")
 
 # Asks the user when he wants to be reminded to refill based on the number of bottles in the fridge 
-userReminderInput = input("What number of bottles have to be in the fridge when you want to be prompted for a refill? - ")
-userReminderinputSplit = userReminderInput.split()
-userReminderInputInt = int(''.join(map(str, userReminderinputSplit)))
+try:
+    userReminderInput = input("What number of bottles have to be in the fridge when you want to be prompted for a refill? - ")
+    userReminderinputSplit = userReminderInput.split()
+    userReminderInputInt = int(''.join(map(str, userReminderinputSplit)))
+except ValueError:
+    print("Please input a valid number and try again")
 
 def reduction():    
     i=questionInt       
