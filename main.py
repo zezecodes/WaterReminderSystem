@@ -18,52 +18,37 @@ emojis = "✨"
 print(f"{emojis} Did you know {randomQuotesGenerator}?\n")
 
 
-def reminderSystem():
-    # Gets the number of bottles put in users fridge daily
-    question1 = input("How many bottles do you normally put in the refrigerator daily? - ")
-    questionSplit = question1.split()
-    questionInt = int(''.join(map(str, questionSplit)))
-    
-    # Gets the number of times users fridge is refilled daily
-    timeRefill = input("How many times do you refill your fridge daily? - ")
-    timeRefillSplit = timeRefill.split()
-    timeRefillInt = int(''.join(map(str, timeRefillSplit)))
-    
-    # Gets the amount of bottles removed from the fridge daily
-    timeTakeout = input("How many times do you take water out of the fridge daily? - ")
-    timeTakeoutSplit = timeTakeout.split()
-    timeTakeoutInt = int(''.join(map(str, timeTakeoutSplit)))
+# Gets the number of bottles put in users fridge daily
+question1 = input("How many bottles do you normally put in the refrigerator daily? - ")
+questionSplit = question1.split()
+questionInt = int(''.join(map(str, questionSplit)))
 
-   # Asks the user when he wants to be reminded to refill based on the number of bottles in the fridge 
-    userReminderInput = input("What number of bottles have to be in the fridge when you want to be prompted for a refill? - ")
-    userReminderinputSplit = userReminderInput.split()
-    userReminderInputInt = int(''.join(map(str, userReminderinputSplit)))
-    if questionInt != userReminderInputInt:
-        redc = questionInt-1
-        
-        print(redc)
+# Gets the number of times users fridge is refilled daily
+timeRefill = input("How many times do you refill your fridge daily? - ")
+timeRefillSplit = timeRefill.split()
+timeRefillInt = int(''.join(map(str, timeRefillSplit)))
 
+# Gets the amount of bottles removed from the fridge daily
+timeTakeout = input("How many times do you take water out of the fridge daily? - ")
+timeTakeoutSplit = timeTakeout.split()
+timeTakeoutInt = int(''.join(map(str, timeTakeoutSplit)))
 
-    print(f"{timeRefillInt}, {timeTakeoutInt}, {questionInt}") 
+# Asks the user when he wants to be reminded to refill based on the number of bottles in the fridge 
+userReminderInput = input("What number of bottles have to be in the fridge when you want to be prompted for a refill? - ")
+userReminderinputSplit = userReminderInput.split()
+userReminderInputInt = int(''.join(map(str, userReminderinputSplit)))
 
-    # while reminderTime > 0 and questionInt != remainder:
-    #     if referenceValue <= remainder :
-    #         print("Please consider refilling your refridgerator with water bottle \n Thank you!")
-    #         break
-    # else:
-    #     print("You won't be needing a refill.\nWe will prompt you when the need arises.\nThank you.")
-    
-# def reduction():
-#     redc -= questionInt
-#     return redc
-# def countdownTimer():
-#     schedule.every(30).minutes.do(reduction)
-#     while True:
-#         schedule.run_pending()
-#         time.sleep(5)
+def reduction():    
+    i=questionInt       
+    while i>userReminderInputInt and i<=questionInt:
+        print(i) 
+        i=i-1
+    print("Time to refill")
+reduction()
 
 
-reminderSystem()
-
+   
+  
+  
 
 
