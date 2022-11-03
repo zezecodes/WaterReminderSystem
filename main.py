@@ -12,9 +12,7 @@ waterQuotesList = ["Adult humans are 60 percent water, and our blood is 90 perce
     "Approximately 80'%' of your brain tissue is made of water", 
 ]
 randomQuotesGenerator = random.choice(waterQuotesList).lower()
-
 emojis = "✨"
-
 print(f"{emojis} Did you know {randomQuotesGenerator}?\n")
 
 
