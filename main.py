@@ -28,7 +28,7 @@ bottleInputNumber = int(''.join(map(str, bottleInputSplit)))
 
 # Gets the number of times users fridge is refilled daily
 bottleRefillInput = input("How many times do you refill your fridge daily? - ")
-bottleRefillSplit = bottleRefill.split()
+bottleRefillSplit = bottleRefillInput.split()
 bottleRefillNumber = int(''.join(map(str, bottleRefillSplit)))
 
 
@@ -67,4 +67,5 @@ reduction()
   
   
 
-
+# x=lambda a,b:a+b
+# print(x(2,3))
